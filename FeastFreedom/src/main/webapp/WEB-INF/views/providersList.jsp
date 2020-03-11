@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>List Providers</h1>
-<h3><a href="add.html">Add More Provider</a></h3>
+<h3><a href="addprovider.html">Add More Provider</a></h3>
 
 <c:if test="${!empty providers}">
 	<table align="left" border="1">

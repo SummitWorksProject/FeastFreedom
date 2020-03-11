@@ -1,9 +1,5 @@
 package com.summitworks.feastfreedom.bean;
-import java.util.Set;
 
-import com.summitworks.feastfreedom.model.ProvidinfoDetail;
-
-import java.util.HashSet;
 
 public class ProvidinfoBean {
 	private Integer id;
@@ -20,9 +16,15 @@ public class ProvidinfoBean {
 	private boolean saturday;
 	private boolean sunday;
 	private byte[] image;
-	private Set<ProvidinfoDetail> providinfoDetail= new HashSet<ProvidinfoDetail>(0);
+	private Integer providerId;
 	
 	
+	public Integer getProviderId() {
+		return providerId;
+	}
+	public void setProviderId(Integer providerId) {
+		this.providerId = providerId;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -96,11 +98,6 @@ public class ProvidinfoBean {
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
-	public Set<ProvidinfoDetail> getProvidinfoDetail() {
-		return providinfoDetail;
-	}
-	public void setProvidinfoDetail(Set<ProvidinfoDetail> providinfoDetail) {
-		this.providinfoDetail = providinfoDetail;
-	}
+	
 
 }

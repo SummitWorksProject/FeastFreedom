@@ -1,17 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Spring3MVC with Hibernate3 CRUD Example using Annotations</title>
-  </head>
-  <body>
-   <th:block th:include="/_header"></th:block>
-   <th:block th:include="/_menu"></th:block>
-   
-    <h2>Spring3MVC with Hibernate3 CRUD Example using Annotations</h2>
-<!--   <h2>1. <a href="providers.html">List of Providers1</a></h2> -->  
-    <h2><a href="add.html">Service Provider Register</a></h2>
-  </body>
+   <head>
+      <meta charset="UTF-8">
+      <title>FeastFreedom Food Delivery</title>
+  <style><%@include file="/WEB-INF/css/styles.css"%></style>
+   </head>
+   <body>
+   		
+      <th:block th:include="/_header.html"></th:block>
+      <%@ include file="_header.html" %>
+      <th:block th:include="/_menu"></th:block>
+        <%@ include file="_menu.html" %>
+      <div class="page-title">Demo</div>
+      <div class="demo-container">
+         <h3>Demo content</h3>
+         <ul>
+            <li>Buy online1</li>
+            <li>Admin pages</li>
+            <li>User</li>
+         </ul>
+      </div>
+       
+      <th:block th:include="/_footer"><%@ include file="_footer.html" %></th:block>
+       
+   </body>
 </html>

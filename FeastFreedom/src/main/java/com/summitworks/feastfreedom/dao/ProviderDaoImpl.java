@@ -23,10 +23,12 @@ public class ProviderDaoImpl implements ProviderDao {
 		return (List<Provider>) sessionFactory.getCurrentSession().createCriteria(Provider.class).list();
 	}
 
-	public Provider getProvider(int empid) {
-		return (Provider) sessionFactory.getCurrentSession().get(Provider.class, empid);
+	public Provider getProvider(int id) {
+		return (Provider) sessionFactory.getCurrentSession().get(Provider.class, id);
 	}
-
+	public Provider getProviderByName(String name) {
+		return (Provider) sessionFactory.getCurrentSession().createSQLQuery("Select * FROM Provider WHERE name = "+name);
+	}
 	public void deleteProvider(Provider provider) {
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM Provider WHERE id = "+provider.getId()).executeUpdate();
 	}

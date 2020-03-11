@@ -1,17 +1,14 @@
 package com.summitworks.feastfreedom.model;
 
 import java.io.Serializable;
-import java.util.Set;
-import java.util.HashSet;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+
 import javax.persistence.Table;
-import javax.persistence.OneToMany;
-import javax.persistence.FetchType;
 
 @Entity
 @Table(name="providinfo")
@@ -57,13 +54,15 @@ public class Providinfo implements Serializable{
 	@Column(name="sunday")
 	private boolean sunday;
 	
+
+
+	@Column(name="providerId")
+	private Integer providerId;
+	
 	@Column(name="image", columnDefinition="BLOB")
 	private byte[] image;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "providinfo")
-	private Set<ProvidinfoDetail> providinfoDetail;
-	
-	
+
 
 	public Integer getId() {
 		return id;
@@ -159,12 +158,12 @@ public class Providinfo implements Serializable{
 	public void setSunday(boolean sunday) {
 		this.sunday = sunday;
 	}
-	
-	public Set<ProvidinfoDetail> getProvidinfoDetail() {
-		return providinfoDetail;
+	public Integer getProviderId() {
+		return providerId;
 	}
-	
-	public void setProvidinfoDetail(Set<ProvidinfoDetail> providinfoDetail) {
-		this.providinfoDetail = providinfoDetail;
+
+	public void setProviderId(Integer providerId) {
+		this.providerId = providerId;
 	}
+
 }

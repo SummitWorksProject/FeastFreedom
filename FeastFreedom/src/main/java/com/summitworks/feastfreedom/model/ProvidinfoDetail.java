@@ -8,13 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
-import javax.persistence.FetchType;
-import com.summitworks.feastfreedom.model.Providinfo;
 
 @Entity
-@Table(name="providerinfo_detail")
+@Table(name="providinfo_detail")
 public class ProvidinfoDetail implements Serializable{
 
 	private static final long serialVersionUID = -723583058586873479L;
@@ -38,22 +34,10 @@ public class ProvidinfoDetail implements Serializable{
 	
 
 	@Column(name = "providinfo_id")
-	//@JoinColumn(name = "ID", nullable = false)
+	
 	private Integer providinfoId;
 	
-	
-	//@ManyToOne
-	@JoinColumn(name="id", nullable=false)
-	  private Providinfo providinfo;
-	  
-	  public Providinfo getProvidinfo() { return this.providinfo; }
-	  
-	  public void setProvidinfo(Providinfo providinfo) { 
-		  this.providinfo =	  providinfo; 
-	}
-	 
-
-	
+		
 	public Integer getId() {
 		return id;
 	}

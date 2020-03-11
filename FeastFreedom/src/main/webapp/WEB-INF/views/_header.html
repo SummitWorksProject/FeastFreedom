@@ -2,18 +2,23 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
  
-   <div class="site-name">Online Shop</div>
+   <div class="site-name">FeastFreedom Homemade Food</div>
    
    <div class="header-bar">
       <th:block sec:authorize="isAuthenticated()">
          Hello
-         <a th:href="@{/admin/accountInfo}" th:utext="${#request.userPrincipal.name}">..</a>
+         <a th:href="@{/admin/accountInfo}" th:utext="">..</a>
          &nbsp;|&nbsp;
-         <a th:href="@{/admin/logout}">Logout</a>
+        <!--  <a th:href="@{/admin/logout}">Logout</a>-->
+         <a href="">User Register</a>
+         <a href="">Login</a>
       </th:block>
-       
+      
+       |
       <th:block sec:authorize="!isAuthenticated()">
-         <a th:href="@{/admin/login}">Login</a>
+         <!-- <a th:href="@{/admin/login}">Login</a> -->
+         <a href="addprovider.html">Provider Register</a>
+         <a href="loginprovider.html">Login</a>
       </th:block>
    </div>
    

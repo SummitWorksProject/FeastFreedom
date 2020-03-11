@@ -1,15 +1,10 @@
 package com.summitworks.feastfreedom.bean;
 
 
-
-
-import com.summitworks.feastfreedom.model.Providinfo;
-
-
 public class ProvidinfoDetailBean {
 
 
-	private Providinfo providinfo;
+
 	private Integer id;
 	private String name;
 	private boolean type;
@@ -17,13 +12,6 @@ public class ProvidinfoDetailBean {
 	private Integer providinfoId;
 
 
-	public Providinfo getProvidinfo() {
-		return this.providinfo;
-	}
-
-	public void setProvidinfo(Providinfo providinfo) {
-		this.providinfo = providinfo;
-	}
 
 	
 	public Integer getId() {

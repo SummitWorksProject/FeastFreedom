@@ -24,22 +24,22 @@ public class ProvidinfoController {
 	@Autowired
 	private ProvidinfoService providinfoService;
 	
-	@RequestMapping(value = "/saveinfo", method = RequestMethod.POST)
+	@RequestMapping(value = "/saveprovidinfo", method = RequestMethod.POST)
 	public ModelAndView saveProvidinfo(@ModelAttribute("command") ProvidinfoBean providinfoBean, 
 			BindingResult result) {
 		Providinfo providinfo = prepareModel(providinfoBean);
 		providinfoService.addProvidinfo(providinfo);
-		return new ModelAndView("redirect:/addinfo.html");
+		return new ModelAndView("redirect:/addprovidinfodetail.html");
 	}
 
-	@RequestMapping(value="/providinfos", method = RequestMethod.GET)
+	@RequestMapping(value="/providprovidinfos", method = RequestMethod.GET)
 	public ModelAndView listProvidinfos() {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("providinfos",  prepareListofBean(providinfoService.listProvidinfos()));
 		return new ModelAndView("providinfosList", model); // logical name of view, logical name of model, actual model
 	}
 
-	@RequestMapping(value = "/addinfo", method = RequestMethod.GET)
+	@RequestMapping(value = "/addprovidinfo", method = RequestMethod.GET)
 	public ModelAndView addProvidinfo(@ModelAttribute("command")  ProvidinfoBean providinfoBean,
 			BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
@@ -47,12 +47,12 @@ public class ProvidinfoController {
 		return new ModelAndView("addProvidinfo", model);
 	}
 	
-	@RequestMapping(value = "/indexinfo", method = RequestMethod.GET)
+	@RequestMapping(value = "/indexprovidinfo", method = RequestMethod.GET)
 	public ModelAndView welcome() {
 		return new ModelAndView("indexinfo");
 	}
 	
-	@RequestMapping(value = "/deleteinfo", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteprovidinfo", method = RequestMethod.GET)
 	public ModelAndView editProvidinfo(@ModelAttribute("command")  ProvidinfoBean providinfoBean,
 			BindingResult result) {
 		providinfoService.deleteProvidinfo(prepareModel(providinfoBean));
@@ -62,7 +62,7 @@ public class ProvidinfoController {
 		return new ModelAndView("addProvidinfo", model);
 	}
 	
-	@RequestMapping(value = "/editinfo", method = RequestMethod.GET)
+	@RequestMapping(value = "/editprovidinfo", method = RequestMethod.GET)
 	public ModelAndView deleteProvidinfo(@ModelAttribute("command")  ProvidinfoBean providinfoBean,
 			BindingResult result) {
 		Map<String, Object> model = new HashMap<String, Object>();
@@ -84,6 +84,7 @@ public class ProvidinfoController {
 		providinfo.setSaturday(providinfoBean.isSaturday());
 		providinfo.setSunday(providinfoBean.isSunday());
 		providinfo.setId(providinfoBean.getId());
+		providinfo.setProviderId(providinfoBean.getProviderId());
 		providinfoBean.setId(null);
 		return providinfo;
 	}
@@ -105,6 +106,7 @@ public class ProvidinfoController {
 				bean.setFriday(providinfo.isFriday());
 				bean.setSaturday(providinfo.isSaturday());
 				bean.setSunday(providinfo.isSunday());
+				bean.setProviderId(providinfo.getProviderId());
 				bean.setId(providinfo.getId());
 				beans.add(bean);
 			}
@@ -124,6 +126,7 @@ public class ProvidinfoController {
 		bean.setFriday(providinfo.isFriday());
 		bean.setSaturday(providinfo.isSaturday());
 		bean.setSunday(providinfo.isSunday());
+		bean.setProviderId(providinfo.getProviderId());
 		bean.setId(providinfo.getId());
 		return bean;
 	}

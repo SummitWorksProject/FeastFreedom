@@ -12,5 +12,7 @@ public interface ProviderDao {
 	
 	public Provider getProvider(int id);
 	
+	public Provider getProviderByName(String name);
+	
 	public void deleteProvider(Provider provider);
 }

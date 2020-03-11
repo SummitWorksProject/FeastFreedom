@@ -8,7 +8,7 @@
   <name>FeastFreedom Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-		<springframework.version>4.3.26.RELEASE</springframework.version>
+		<springframework.version>3.0.1.RELEASE</springframework.version>
 		<hibernate.version>3.6.3.Final</hibernate.version>
 		<mysql.version>8.0.19</mysql.version>
 		<joda-time.version>2.3</joda-time.version>

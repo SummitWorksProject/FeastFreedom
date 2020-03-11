@@ -12,5 +12,7 @@ public interface ProviderService {
 	
 	public Provider getProvider(int id);
 	
+	public Provider getProviderByName(String Name);
+	
 	public void deleteProvider(Provider provider);
 }

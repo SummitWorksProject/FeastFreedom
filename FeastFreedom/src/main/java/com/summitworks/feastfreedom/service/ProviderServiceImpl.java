@@ -30,7 +30,9 @@ public class ProviderServiceImpl implements ProviderService {
 	public Provider getProvider(int id) {
 		return providerDao.getProvider(id);
 	}
-	
+	public Provider getProviderByName(String name) {
+		return providerDao.getProviderByName(name);
+	}
 	public void deleteProvider(Provider provider) {
 		providerDao.deleteProvider(provider);
 	}
