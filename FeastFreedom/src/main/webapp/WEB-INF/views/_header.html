@@ -6,12 +6,12 @@
    
    <div class="header-bar">
       <th:block sec:authorize="isAuthenticated()">
-         Hello
+         <!--  Hello
          <a th:href="@{/admin/accountInfo}" th:utext="">..</a>
          &nbsp;|&nbsp;
-        <!--  <a th:href="@{/admin/logout}">Logout</a>-->
-         <a href="">User Register</a>
-         <a href="">Login</a>
+        <a th:href="@{/admin/logout}">Logout</a>-->
+         <a href="register.html">User Register</a>
+         <a href="login.html">Login</a>
       </th:block>
       
        |

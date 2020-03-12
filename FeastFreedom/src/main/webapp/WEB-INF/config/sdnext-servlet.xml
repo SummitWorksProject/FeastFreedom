@@ -40,8 +40,10 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 		<property name="annotatedClasses">
 			<list>
 				<value>com.summitworks.feastfreedom.model.Provider</value>
-				 <value>com.summitworks.feastfreedom.model.Providinfo</value>
+				<value>com.summitworks.feastfreedom.model.Providinfo</value>
 				<value>com.summitworks.feastfreedom.model.ProvidinfoDetail</value> 
+				<value>com.summitworks.feastfreedom.model.User</value> 
+				<value>com.summitworks.feastfreedom.model.Login</value> 
 			</list>
 		</property>
 		<property name="hibernateProperties">

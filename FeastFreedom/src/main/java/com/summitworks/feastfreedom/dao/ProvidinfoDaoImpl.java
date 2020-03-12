@@ -23,8 +23,8 @@ public class ProvidinfoDaoImpl implements ProvidinfoDao {
 		return (List<Providinfo>) sessionFactory.getCurrentSession().createCriteria(Providinfo.class).list();
 	}
 
-	public Providinfo getProvidinfo(int empid) {
-		return (Providinfo) sessionFactory.getCurrentSession().get(Providinfo.class, empid);
+	public Providinfo getProvidinfo(int id) {
+		return (Providinfo) sessionFactory.getCurrentSession().get(Providinfo.class, id);
 	}
 
 	public void deleteProvidinfo(Providinfo providinfo) {

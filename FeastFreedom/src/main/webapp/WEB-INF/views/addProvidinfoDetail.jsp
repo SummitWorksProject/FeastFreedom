@@ -12,16 +12,15 @@
 	<body>
 	 <%@ include file="_header.html" %>
 	 <%@ include file="_menu.html" %>
-		<h2>Menu</h2>
+		<h2>Privider Menu</h2>
+		<div class="login-container">
 		<form:form method="POST" action="saveprovidinfodetail.html">
 	   		<table>
 			    <tr>
 			        <td><form:label style="visibility:hidden" path="id"> ID:</form:label></td>
 			        <td><form:input style="visibility:hidden" path="id" value="${providinfoDetail.id}" readonly="true"/></td>
-			    </tr>
-			     <tr>
-			        <td><form:label style="visibility:hidden" path="providinfoId"> ID:</form:label></td>
-			        <td><form:input style="visibility:hidden" path="providinfoId" value="${providinfoDetail.providinfoId}" readonly="true"/></td>
+			        <td><form:label style="visibility:hidden" path="providinfoId"> providinfoId:</form:label></td>
+			        <td><form:input style="visibility:hidden" path="providinfoId" value="${param.infoId}" readonly="true"/></td>
 			    </tr>
 			    <tr>
 			        <td><form:label path="name">Menu Item:</form:label></td>
@@ -31,21 +30,21 @@
 			        <td><form:label path="type">Veg/Non-Veg:</form:label></td>
 			        <td><form:input path="type" value="${providinfoDetail.type}"/></td>
 			    </tr>
-			
 			    <tr>
 			        <td><form:label path="price">Price:</form:label></td>
                     <td><form:input path="price" value="${providinfoDetail.price}"/></td>
 			    </tr>
 			     
 			    <tr>
-			      <td ><input type="submit" value="Save"/></td>
+			      <td ><input type="submit" value="Add"/></td>
 			      <td><input type="submit" value="Cancel"/></td>
 		      </tr>
 			</table> 
 		</form:form>
+		</div>
 		
   <c:if test="${!empty providinfoDetails}">
-		<h2>List Menu</h2>
+  <div class="login-container">
 	<table align="left" border="1">
 		<tr>
 			<th>Menu Name</th>
@@ -53,7 +52,6 @@
 			<th>Veg/Non-Veg</th>
 			<th>Actions on Row</th>
 		</tr>
-
 		<c:forEach items="${providinfoDetails}" var="providinfoDetail">
 			<tr>
 				<td><c:out value="${providinfoDetail.name}"/></td>
@@ -63,6 +61,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
 </c:if>
 
 	</body>

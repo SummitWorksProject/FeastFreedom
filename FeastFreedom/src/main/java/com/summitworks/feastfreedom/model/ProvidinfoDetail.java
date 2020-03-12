@@ -33,7 +33,7 @@ public class ProvidinfoDetail implements Serializable{
 	
 	
 
-	@Column(name = "providinfo_id")
+	@Column(name = "providinfoId")
 	
 	private Integer providinfoId;
 	

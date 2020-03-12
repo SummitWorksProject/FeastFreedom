@@ -28,7 +28,7 @@ public class ProvidinfoDetailController {
 		System.out.println("1111");
 		ProvidinfoDetail providinfoDetail = prepareModel(providinfoDetailBean);
 		providinfoDetailService.addProvidinfoDetail(providinfoDetail);
-		return new ModelAndView("redirect:/addprovidinfodetail.html");
+		return new ModelAndView("redirect:/addprovidinfodetail.html?providerId=");
 	}
 
 	@RequestMapping(value="/providinfodetails", method = RequestMethod.GET)
@@ -96,6 +96,7 @@ public class ProvidinfoDetailController {
 		providinfoDetail.setName(providinfoDetailBean.getName());
 		providinfoDetail.setPrice(providinfoDetailBean.getPrice());
 		providinfoDetail.setType(providinfoDetailBean.getType());
+		providinfoDetail.setProvidinfoId(providinfoDetailBean.getProvidinfoId());
 		providinfoDetail.setId(providinfoDetailBean.getId());
 		providinfoDetailBean.setId(null);
 		return providinfoDetail;
@@ -111,7 +112,7 @@ public class ProvidinfoDetailController {
 				bean.setType(providinfoDetail.getType());
 				bean.setPrice(providinfoDetail.getPrice());
 				bean.setName(providinfoDetail.getName());
-			
+				bean.setProvidinfoId(providinfoDetail.getProvidinfoId());
 				bean.setId(providinfoDetail.getId());
 				beans.add(bean);
 			}
@@ -124,7 +125,7 @@ public class ProvidinfoDetailController {
 		bean.setType(providinfoDetail.getType());
 		bean.setPrice(providinfoDetail.getPrice());
 		bean.setName(providinfoDetail.getName());
-	
+		bean.setProvidinfoId(providinfoDetail.getProvidinfoId());
 		bean.setId(providinfoDetail.getId());
 		return bean;
 	}

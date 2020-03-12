@@ -10,7 +10,7 @@ public interface ProvidinfoService {
 
 	public List<Providinfo> listProvidinfos();
 	
-	public Providinfo getProvidinfo(int empid);
+	public Providinfo getProvidinfo(int id);
 	
 	public void deleteProvidinfo(Providinfo providinfo);
 }

@@ -27,7 +27,7 @@ public class ProviderController {
 			BindingResult result) {
 		Provider provider = prepareModel(providerBean);
 		providerService.addProvider(provider);
-		return new ModelAndView("redirect:/addprovidinfo.html");
+		return new ModelAndView("redirect:/addprovidinfo.html?providerId="+provider.getId());
 	}
 
 	@RequestMapping(value="/providers", method = RequestMethod.GET)

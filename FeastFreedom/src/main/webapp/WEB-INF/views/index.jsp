@@ -11,7 +11,7 @@
       <%@ include file="_header.html" %>
       <th:block th:include="/_menu"></th:block>
         <%@ include file="_menu.html" %>
-      <div class="page-title">Demo</div>
+      <div class="page-title"></div>
       <div class="demo-container">
          <h3>Demo content</h3>
          <ul>

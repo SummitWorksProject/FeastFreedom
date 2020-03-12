@@ -29,7 +29,8 @@ public class ProvidinfoController {
 			BindingResult result) {
 		Providinfo providinfo = prepareModel(providinfoBean);
 		providinfoService.addProvidinfo(providinfo);
-		return new ModelAndView("redirect:/addprovidinfodetail.html");
+		System.out.println("providinfo.id="+providinfo.getId());
+		return new ModelAndView("redirect:/addprovidinfodetail.html?infoId="+providinfo.getId());
 	}
 
 	@RequestMapping(value="/providprovidinfos", method = RequestMethod.GET)

@@ -9,17 +9,11 @@
    <body>
     <%@ include file="_header.html" %>
 	<%@ include file="_menu.html" %>
-       
-      <div class="page-title">Login Provider</div>
-       
-      <div class="login-container">
-         <h3>Enter Provider Name and password</h3>
-         <br>
-        
-          
-         <form method="POST"
+	 <h2>Privider Login</h2>
+       <div class="login-container">
+          <form method="POST"
             th:action="@{/checkprovider}">
-            <table>
+            <table align="center">
                <tr>
                   <td>Provider Name *</td>
                   <td><input name="name" /></td>
@@ -37,8 +31,12 @@
                </tr>
             </table>
          </form>
-          
-         <span class="error-message" th:utext="${error}"></span>
+          <table align="center">
+                <tr>
+                    <td style="font-style: italic; color: red;">${error}</td>
+                </tr>
+            </table> 
+       
       </div>
      <%@ include file="_footer.html" %>
        
